@@ -2,7 +2,7 @@ import subprocess
 import re
 
 class TempGetter:
-    def get_current_temp()->float:
+    def get_current_temp(self)->float:
         raw_output = subprocess.check_output(['vcgencmd', 'measure_temp'])
         searched_exp = re.search('[0-9]+.[0-9]', raw_output.decode("utf-8"))
         
