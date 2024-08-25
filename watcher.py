@@ -16,12 +16,13 @@ def watch_temp(metric_service: metrics.Service, temp_getter: temp.TempGetter):
         time.sleep(60)
 
 def need_to_switch_fan(temp: float, does_fan_work: bool)->bool:
-    temp_threshold = 75.0
+    temp_upper_threshold = 75.0
+    temp_lower_threshold = 55.0
     
-    if temp >= temp_threshold and  not does_fan_work:
+    if temp >= temp_upper_threshold and  not does_fan_work:
         return True
     
-    if temp < temp_threshold and does_fan_work:
+    if temp < temp_lower_threshold and does_fan_work:
         return True
     
     return False
