@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 class Controller:
     def __init__(self):
         global fan_pin;
-        fan_pin = 21
+        fan_pin = 20
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(fan_pin, GPIO.OUT)
 
