@@ -15,5 +15,17 @@ class Controller:
         
         return state
     
+    def need_to_switch_fan(self, temp: float, does_fan_work: bool)->bool:
+        temp_upper_threshold = 60.0
+        temp_lower_threshold = 40.0
+        
+        if temp >= temp_upper_threshold and  not does_fan_work:
+            return True
+        
+        if temp < temp_lower_threshold and does_fan_work:
+            return True
+        
+        return False
+
     def clean_up_pins(self):
         GPIO.cleanup()
