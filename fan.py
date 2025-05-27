@@ -17,7 +17,7 @@ class Controller:
     
     def need_to_switch_fan(self, temp: float, does_fan_work: bool)->bool:
         temp_upper_threshold = 60.0
-        temp_lower_threshold = 40.0
+        temp_lower_threshold = 47.0
         
         if temp >= temp_upper_threshold and  not does_fan_work:
             return True
